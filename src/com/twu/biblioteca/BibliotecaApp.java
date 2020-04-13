@@ -24,36 +24,19 @@ public class BibliotecaApp {
                     System.out.println(catalogue.toString());
                     break;
                 case 2: //checkout book
+                    System.out.println(catalogue.Checkout());
                     break;
                 case 3: //return book
+                    System.out.println(catalogue.Return());
                     break;
                 case 4: //quit application
-                    System.exit(0);
+                    mainLoop = false; //main loop bool to close, breaks loop and exit code executes
+                    break;
                 default:
                     System.out.println(UIStrings.InvalidOptionSelected());
                     break;
             }
         }
+        System.exit(0);
     }
-
-    String Checkout(Book book){
-        try{
-            book.Checkout();
-            return UIStrings.CheckoutSuccess();
-        }
-        catch (InvalidBookException e) {
-            return UIStrings.CheckoutFail();
-        }
-    }
-
-    String Return(Book book){
-        try{
-            book.Return();
-            return UIStrings.ReturnSuccess();
-        }
-        catch (InvalidBookException e) {
-            return UIStrings.ReturnFail();
-        }
-    }
-
 }

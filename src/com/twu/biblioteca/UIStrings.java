@@ -9,13 +9,16 @@ public class UIStrings {
     public static String Menu(){
         //main menu w/ options 1. 2. 3. etc
         return  "Please select from the following:\n" +
-                "1.List \n" +
-                "2.Checkout \n" +
-                "3.Return \n" +
-                "4.Quit \n";
+                "1.List of books \n" +
+                "2.Checkout a book\n" +
+                "3.Return a book\n" +
+                "4.Quit Biblioteca\n";
     }
     public static String InvalidOptionSelected(){
         return "Please select a valid option!";
+    }
+    public static String InputTitle(){
+        return "Please input the book's title: ";
     }
     public static String CheckoutSuccess(){
         //message to display when book is checked out successfully

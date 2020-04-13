@@ -1,6 +1,9 @@
 package com.twu.biblioteca;
 
+import sun.java2d.InvalidPipeException;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Catalogue {
     //responsible for enumeration of book objects
@@ -24,9 +27,43 @@ public class Catalogue {
         //returns list of all books in catalogue
         StringBuilder s = new StringBuilder();
         for(Book element : cat) {
-            s.append(element.toString());
+            if(element.getStatus()) {
+                s.append(element.toString());
+            }
         }
         return s.toString();
+    }
+
+    public String Checkout(){
+        String title = InputBookTitle();
+        int index = findBook(title);
+
+        try{
+            cat.get(index).Checkout();
+            return UIStrings.CheckoutSuccess();
+        }
+        catch(Exception e){
+            return UIStrings.CheckoutFail();
+        }
+    }
+
+    public String Return(){
+        String title = InputBookTitle();
+        int index = findBook(title);
+
+        try{
+            cat.get(index).Return();
+            return UIStrings.ReturnSuccess();
+        }
+        catch(Exception e){
+            return UIStrings.ReturnFail();
+        }
+    }
+
+    String InputBookTitle(){
+        Scanner in = new Scanner(System.in);
+        System.out.print(UIStrings.InputTitle());
+        return in.nextLine();
     }
 
     int findBook(String title){
