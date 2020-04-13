@@ -28,4 +28,16 @@ public class Catalogue {
         }
         return s.toString();
     }
+
+    int findBook(String title){
+        //find index of book that matches title given
+        for(int i = 0; i < cat.size(); i++){
+            Book b = cat.get(i);
+            if (b.getTitle().equals(title)){
+                return i;
+            }
+        }
+        //default return
+        return -1;
+    }
 }

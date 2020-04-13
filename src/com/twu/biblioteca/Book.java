@@ -16,14 +16,28 @@ public class Book {
         this.year = year;
     }
     
-    public String toString(Book b){
+    public String toString(){
         return title + ", " + author + ", " + year + "\n";
     }
 
-    public void Checkout(Book item) throws InvalidBookException {
+    public String getTitle(){
+        return title;
+    }
+    public boolean getStatus(){
+        return available;
+    }
+
+    public void Checkout() throws InvalidBookException {
         if(available){
             this.available = false;
         }
         else throw new InvalidBookException("Book is already checked out.");
+    }
+
+    public void Return() throws InvalidBookException {
+        if(!available){
+            this.available = true;
+        }
+        else throw new InvalidBookException("Book is not checked out.");
     }
 }

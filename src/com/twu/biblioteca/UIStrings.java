@@ -4,14 +4,18 @@ public class UIStrings {
 
     public static String Welcome() {
         //message to display on program start
-        return "Welcome to Biblioteca. your one-stop-shop for great book titles in Bangalore!";
+        return "Welcome to Biblioteca. your one-stop-shop for great book titles in Bangalore!\n";
     }
     public static String Menu(){
-        //main menu options 1. 2. 3. etc
-        return  "1.List \n" +
+        //main menu w/ options 1. 2. 3. etc
+        return  "Please select from the following:\n" +
+                "1.List \n" +
                 "2.Checkout \n" +
                 "3.Return \n" +
                 "4.Quit \n";
+    }
+    public static String InvalidOptionSelected(){
+        return "Please select a valid option!";
     }
     public static String CheckoutSuccess(){
         //message to display when book is checked out successfully
