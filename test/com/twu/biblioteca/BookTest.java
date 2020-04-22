@@ -28,11 +28,11 @@ public class BookTest {
 
     @Test (expected = invalidBookException.class)
     public void cantReturnAvailableBook() {
-        b.checkin();
+        b.checkIn();
     }
     @Test
     public void canReturnBook() {
         b.checkout();
-        b.checkin();
+        b.checkIn();
     }
 }

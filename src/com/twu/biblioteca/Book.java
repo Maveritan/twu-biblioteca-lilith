@@ -2,10 +2,10 @@ package com.twu.biblioteca;
 
 public class Book {
 
-    String title;
-    String author;
-    int year;
-    boolean available = true;
+    private String title;
+    private String author;
+    private int year;
+    private boolean available = true;
 
     public Book(String title, String author, int year) {
         //constructor
@@ -32,7 +32,7 @@ public class Book {
         else throw new invalidBookException("Book is already checked out.");
     }
 
-    public void checkin() throws invalidBookException {
+    public void checkIn() throws invalidBookException {
         if(!available){
             this.available = true;
         }

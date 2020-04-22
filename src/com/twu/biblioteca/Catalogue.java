@@ -7,11 +7,11 @@ public class Catalogue {
     //responsible for enumeration of book objects
     //initial library of available books - things I had within arm's reach
     //very quick and dirty
-    ArrayList<Book> cat = new ArrayList<Book>();
-    Book b1 = new Book("Outspoken", "Julia Serano", 2016);
-    Book b2 = new Book("The Tea Dragon Society", "Katie O'Neill", 2017);
-    Book b3 = new Book("Wandering Son (Volume One)", "Shimura Takako", 2011);
-    Book b4 = new Book("My Friend Took Me To A Feline Therapy Place For My Anxiety And I'm Starting To Wonder Where The Cats Are?", "Alex Zandra Van Chestein", 2018);
+    private ArrayList<Book> cat = new ArrayList<Book>();
+    private Book b1 = new Book("Outspoken", "Julia Serano", 2016);
+    private Book b2 = new Book("The Tea Dragon Society", "Katie O'Neill", 2017);
+    private Book b3 = new Book("Wandering Son (Volume One)", "Shimura Takako", 2011);
+    private Book b4 = new Book("My Friend Took Me To A Feline Therapy Place For My Anxiety And I'm Starting To Wonder Where The Cats Are?", "Alex Zandra Van Chestein", 2018);
 
     public Catalogue(){
         //constructor
@@ -50,7 +50,7 @@ public class Catalogue {
         int index = findBook(title);
 
         try{
-            cat.get(index).checkin();
+            cat.get(index).checkIn();
             return UIStrings.returnSuccess();
         }
         catch(Exception e){
