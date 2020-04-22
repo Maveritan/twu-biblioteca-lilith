@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import java.io.InvalidObjectException;
-
 public class Book {
 
     String title;
@@ -27,17 +25,17 @@ public class Book {
         return available;
     }
 
-    public void Checkout() throws InvalidBookException {
+    public void checkout() throws invalidBookException {
         if(available){
             this.available = false;
         }
-        else throw new InvalidBookException("Book is already checked out.");
+        else throw new invalidBookException("Book is already checked out.");
     }
 
-    public void Return() throws InvalidBookException {
+    public void checkin() throws invalidBookException {
         if(!available){
             this.available = true;
         }
-        else throw new InvalidBookException("Book is not checked out.");
+        else throw new invalidBookException("Book is not checked out.");
     }
 }

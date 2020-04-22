@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import sun.java2d.InvalidPipeException;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,35 +32,35 @@ public class Catalogue {
         return s.toString();
     }
 
-    public String Checkout(){
-        String title = InputBookTitle();
+    public String checkout(){
+        String title = inputBookTitle();
         int index = findBook(title);
 
         try{
-            cat.get(index).Checkout();
-            return UIStrings.CheckoutSuccess();
+            cat.get(index).checkout();
+            return UIStrings.checkoutSuccess();
         }
         catch(Exception e){
-            return UIStrings.CheckoutFail();
+            return UIStrings.checkoutFail();
         }
     }
 
-    public String Return(){
-        String title = InputBookTitle();
+    public String checkin(){
+        String title = inputBookTitle();
         int index = findBook(title);
 
         try{
-            cat.get(index).Return();
-            return UIStrings.ReturnSuccess();
+            cat.get(index).checkin();
+            return UIStrings.returnSuccess();
         }
         catch(Exception e){
-            return UIStrings.ReturnFail();
+            return UIStrings.returnFail();
         }
     }
 
-    String InputBookTitle(){
+    String inputBookTitle(){
         Scanner in = new Scanner(System.in);
-        System.out.print(UIStrings.InputTitle());
+        System.out.print(UIStrings.inputTitle());
         return in.nextLine();
     }
 

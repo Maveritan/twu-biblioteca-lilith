@@ -14,9 +14,9 @@ public class BibliotecaApp {
         boolean mainLoop = true;
 
         //Display Welcome and Menu
-        System.out.println(UIStrings.Welcome());
+        System.out.println(UIStrings.welcome());
         while (mainLoop) {
-            System.out.print(UIStrings.Menu());
+            System.out.print(UIStrings.menu());
 
             int selection = in.nextInt();
             switch (selection) {
@@ -24,16 +24,16 @@ public class BibliotecaApp {
                     System.out.println(catalogue.toString());
                     break;
                 case 2: //checkout book
-                    System.out.println(catalogue.Checkout());
+                    System.out.println(catalogue.checkout());
                     break;
                 case 3: //return book
-                    System.out.println(catalogue.Return());
+                    System.out.println(catalogue.checkin());
                     break;
                 case 4: //quit application
                     mainLoop = false; //main loop bool to close, breaks loop and exit code executes
                     break;
                 default:
-                    System.out.println(UIStrings.InvalidOptionSelected());
+                    System.out.println(UIStrings.invalidOptionSelected());
                     break;
             }
         }

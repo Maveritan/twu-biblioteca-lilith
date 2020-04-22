@@ -8,7 +8,7 @@ public class CatalogueTest {
     Catalogue cat = new Catalogue();
 
     @Test
-    public void CatalogueSearchTest(){
+    public void catalogueSearchTest(){
         //search for valid book, known at index 0
         int i1 = cat.findBook("Outspoken");
         int i2 = 0;
