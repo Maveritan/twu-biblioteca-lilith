@@ -3,12 +3,12 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class AuthenticationTest {
-    User user = new User("name","pass");
+public class AccountsTest {
+    //User user = new User("name","pass");
 
     @Test
     public void correctCredentialsLoginSuccessfully(){
-        AssertEquals(user, Accounts.authenticate("name","pass"));
+        Accounts.authenticate("name","pass");
     }
 
     @Test (expected = InvalidUserException.class)
