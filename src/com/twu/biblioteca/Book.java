@@ -25,17 +25,17 @@ public class Book {
         return available;
     }
 
-    public void checkout() throws invalidBookException {
+    public void checkout() throws InvalidBookException {
         if(available){
             this.available = false;
         }
-        else throw new invalidBookException("Book is already checked out.");
+        else throw new InvalidBookException("Book is already checked out.");
     }
 
-    public void checkIn() throws invalidBookException {
+    public void checkIn() throws InvalidBookException {
         if(!available){
             this.available = true;
         }
-        else throw new invalidBookException("Book is not checked out.");
+        else throw new InvalidBookException("Book is not checked out.");
     }
 }

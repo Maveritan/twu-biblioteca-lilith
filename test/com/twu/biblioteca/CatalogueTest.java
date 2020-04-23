@@ -13,10 +13,21 @@ public class CatalogueTest {
         int i1 = cat.findBook("Outspoken");
         int i2 = 0;
         assertEquals(i1,i2);
+    }
 
+    @Test
+    public void shouldNotFindInvalidBook(){
         //search for invalid book
-        i1 = cat.findBook("Sakura Wars");
-        i2 = -1;
+        int i1 = cat.findBook("Sakura Wars");
+        int i2 = -1;
         assertEquals(i1,i2);
     }
+
+    @Test
+    public void nullSearchReturnsNegativeIndex(){
+        int i = cat.findBook(null);
+        assertEquals(-1,i);
+    }
+
+
 }

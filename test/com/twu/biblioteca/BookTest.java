@@ -20,13 +20,13 @@ public class BookTest {
     }
 
 
-    @Test (expected = invalidBookException.class)
+    @Test (expected = InvalidBookException.class)
     public void cantCheckoutBookTwice(){
         b.checkout(); //checkout book
         b.checkout(); //try to checkout again - should fail and throw exception
     }
 
-    @Test (expected = invalidBookException.class)
+    @Test (expected = InvalidBookException.class)
     public void cantReturnAvailableBook() {
         b.checkIn();
     }
